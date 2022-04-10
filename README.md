@@ -2,27 +2,33 @@
 
 Nomor 1
 
-``` 
-#Praktikum soal nomor 1
 
 #sub soal (a)
+```
 #pada sub soal (a) kita menggunakan x(jumlah orang yang bertemu penyurvei) = 3
 p = 0.20
 n = 3
 dgeom(x = n, prob = p)
 ```
-> Pada potongan code di atas befungsi untuk menghitung peluang penyurvei bertemu 3 orang yang tidak menghadiri acara vaksinasi 
-```
+> Pada potongan code di atas befungsi untuk menghitung peluang penyurvei bertemu 3 orang yang tidak menghadiri acara vaksinasi
+> `dgeom(x,pron)` merupakan probabilitas `x` kegagalan sebelum kegagalan sebelum kesusksesan ketika probabilitas kesuksesan adalah `prob`
+
 #sub soal (b)
+```
 mean(rgeom(n = 10000, prob = p) == 3)
+```
+>`rgeom(x, prob)` adalah jumlah kegagalan ketika probabilitas kesuksesan adalah `prob` dengan `x` percobaan.
+
 
 #sub soal (c)
+```
 #kesimpulan yang telah kita dapatkan dari sub soal (a) dan (b) adalah
 #(a) didapatkan nilai exactnya yang bernilai 0.1024
 #(b) didapatkan nilai dari percobaan yang menggunakan 10000 data sembarang
 #dari perhitungan didapat hasil perhitungan yang berbeda, namun hasilnya mendekati nilai exact
-
+```
 #sub soal (d)
+```
 #pada sub soal (d) kita membuat histogram distibusi geometrik
 #Yaitu histogram Peluang X = 3 gagal Sebelum Sukses Pertama
 library(dplyr)
@@ -42,8 +48,11 @@ data.frame(x = 0:10, prob = dgeom(x = 0:10, prob = p)) %>%
        subtitle = "Geometric(.2)",
        x = "Gagal Sebelum Sukses Pertama (x)",
        y = "Peluang")
+```
+> Histogram Distribusi Geometrik Peluang X Gagal Sebelum Sukses Pertama
+![Rplot](https://user-images.githubusercontent.com/72547769/162623727-90ae8759-3cde-4091-a8c6-b69921f706ec.png)
 
-
+```
 #sub soal (e)
 p=0.2
 
@@ -57,8 +66,7 @@ mean1
 var1 = (1 - p) / p^2
 var1
 ```
-> Histogram Distribusi Geometrik Peluang X Gagal Sebelum Sukses Pertama
-![Rplot](https://user-images.githubusercontent.com/72547769/162623727-90ae8759-3cde-4091-a8c6-b69921f706ec.png)
+
 
 
 Nomor 2
