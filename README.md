@@ -49,6 +49,8 @@ data.frame(x = 0:10, prob = dgeom(x = 0:10, prob = p)) %>%
 ```
 > pada sub soal (d) kita membuat histogram distibusi geometrik
 > Yaitu histogram Peluang X = 3 gagal Sebelum Sukses Pertama
+
+
 > Histogram Distribusi Geometrik Peluang X Gagal Sebelum Sukses Pertama
 ![Rplot](https://user-images.githubusercontent.com/72547769/162623727-90ae8759-3cde-4091-a8c6-b69921f706ec.png)
 
@@ -95,9 +97,9 @@ hist(data,
      xlim = c(0,8))
 
 ```
-> Histogram Distribusi Binomial Selama 20 Percobaan
-![Rplot01](https://user-images.githubusercontent.com/72547769/162623795-202b13cb-1b1b-4fa9-a363-98b0522e2408.png)
 
+![Rplot01](https://user-images.githubusercontent.com/72547769/162623795-202b13cb-1b1b-4fa9-a363-98b0522e2408.png)
+> Histogram Distribusi Binomial Selama 20 Percobaan
 #sub soal (c)
 ```
 #jumlah pasien
