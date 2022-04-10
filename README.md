@@ -1,7 +1,6 @@
 # P1_Probstat_D_5025201165
 
 Nomor 1
-![Rplot](https://user-images.githubusercontent.com/72547769/162623727-90ae8759-3cde-4091-a8c6-b69921f706ec.png)
 
 ``` 
 #Praktikum soal nomor 1
@@ -58,8 +57,8 @@ mean1
 var1 = (1 - p) / p^2
 var1
 ```
-
-> fungsi createNewTxt digunakan untuk membuat file txt baru di dalam folder yang telah dibuat oleh fungsi **createNewDir()**. setiap jumlah **gacha** % 10 bernilai 0, file txt akan dibuat dan ada sekitar 9 file di setiap foldernya.
+> Histogram Distribusi Geometrik Peluang X Gagal Sebelum Sukses Pertama
+![Rplot](https://user-images.githubusercontent.com/72547769/162623727-90ae8759-3cde-4091-a8c6-b69921f706ec.png)
 
 
 Nomor 2
