@@ -3,49 +3,60 @@
 Nomor 1
 ![Rplot](https://user-images.githubusercontent.com/72547769/162623727-90ae8759-3cde-4091-a8c6-b69921f706ec.png)
 
-``` C++
-void createNewTxt()
-{
-  char *num;
-  int gacha = 1;
-  int gacha_num[] = {90, 180, 270, 360, 450};
-  int count = 0;
-  int progems = 79000;
-  for (int i = 79000; i > 0; i -= 160)
-  {
-    progems -= 160;
-    if (progems > 0)
-    {
-      if (gacha % 10 == 0 && count < 5)
-      {
-        char fileName[100];
-        if (asprintf(&num, "%d", gacha_num[count]) == -1)
-        {
-          perror("asprintf");
-        }
-        strcat(strcpy(fileName, "gacha_gacha/total_gacha_"), num);
-        strcat(fileName, "/");
-        free(num);
+``` 
+#Praktikum soal nomor 1
 
-        if (asprintf(&num, "%d", gacha) == -1)
-        {
-          perror("asprintf");
-        }
-        strcat(fileName, "_gacha_");
-        strcat(fileName, num);
-        strcat(fileName, ".txt");
-        free(num);
+#sub soal (a)
+#pada sub soal (a) kita menggunakan x(jumlah orang yang bertemu penyurvei) = 3
+p = 0.20
+n = 3
+dgeom(x = n, prob = p)
+```
+> Pada potongan code di atas befungsi untuk menghitung peluang penyurvei bertemu 3 orang yang tidak menghadiri acara vaksinasi 
+```
+#sub soal (b)
+mean(rgeom(n = 10000, prob = p) == 3)
 
-        char *args[] = {"touch", fileName, NULL};
-        touchFile(args);
-      }
+#sub soal (c)
+#kesimpulan yang telah kita dapatkan dari sub soal (a) dan (b) adalah
+#(a) didapatkan nilai exactnya yang bernilai 0.1024
+#(b) didapatkan nilai dari percobaan yang menggunakan 10000 data sembarang
+#dari perhitungan didapat hasil perhitungan yang berbeda, namun hasilnya mendekati nilai exact
 
-      if (gacha % 90 == 0 && gacha != 0)
-        count++;
-      gacha++;
-    }
-  }
-}
+#sub soal (d)
+#pada sub soal (d) kita membuat histogram distibusi geometrik
+#Yaitu histogram Peluang X = 3 gagal Sebelum Sukses Pertama
+library(dplyr)
+library(ggplot2)
+
+data.frame(x = 0:10, prob = dgeom(x = 0:10, prob = p)) %>%
+  mutate(Failures = ifelse(x == n, n, "lainnya")) %>%
+  ggplot(aes(x = factor(x), y = prob, fill = Failures)) +
+  geom_col() +
+  geom_text(
+    aes(label = round(prob,2), y = prob + 0.01),
+    position = position_dodge(0.9),
+    size = 3,
+    vjust = 0
+  ) +
+  labs(title = "Histogram Distribusi Geometrik, Peluang X =3 Gagal Sebelum Sukses Pertama",
+       subtitle = "Geometric(.2)",
+       x = "Gagal Sebelum Sukses Pertama (x)",
+       y = "Peluang")
+
+
+#sub soal (e)
+p=0.2
+
+#Nilai Rataan (mean)
+#didapat dengan cara membagi 1 dengan p (0.2)
+mean1 = 1 / p
+mean1
+
+#Nilai Varian
+#didapat dengan cara mengurangkan 1 dengan p (0.2) dan kemudian dibagi dengan pangkat dua dari p ((0.2)^2)
+var1 = (1 - p) / p^2
+var1
 ```
 
 > fungsi createNewTxt digunakan untuk membuat file txt baru di dalam folder yang telah dibuat oleh fungsi **createNewDir()**. setiap jumlah **gacha** % 10 bernilai 0, file txt akan dibuat dan ada sekitar 9 file di setiap foldernya.
