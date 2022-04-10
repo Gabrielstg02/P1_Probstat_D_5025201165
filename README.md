@@ -275,7 +275,10 @@ hist(x3,
      ylim = c(0,500),
      xlim = c(0,3),
      main = "Histogram Eksponensial jika n = 1000")
-     
+```
+>Histogram dari Distribusi Exponensial untuk n = 1000
+![Rplot06](https://user-images.githubusercontent.com/72547769/162623936-acffca05-cdbf-4ce4-beab-069398b36071.png)
+```
 #n=10000
 set.seed(1)
 x4 <- rexp(10000,rate = lambda)
@@ -283,8 +286,13 @@ hist(x4,
      ylim = c(0,5000),
      xlim = c(0,4),
      main = "Histogram Eksponensial jika n = 10000")
+```
+>Histogram dari Distribusi Exponensial untuk n = 10000
+![Rplot07](https://user-images.githubusercontent.com/72547769/162623942-7531194e-712a-4c94-a5b4-e7dc87590f74.png)
+
 
 #sub soal (c)
+```
 #Nilai rataan
 #dimana n =100 dan lambda = 3
 n = 100
@@ -292,26 +300,53 @@ lamd = 3
 data <- rexp(n, rate = lamd)
 avg <- mean(data)
 avg
-
+```
+>nilai rataan dapat dihitung dengan `avg`
+```
 #nilai varian
 va <- var(data)
 va
 ```
-
-
-
-
->Histogram dari Distribusi Exponensial untuk n = 1000
-![Rplot06](https://user-images.githubusercontent.com/72547769/162623936-acffca05-cdbf-4ce4-beab-069398b36071.png)
-
-
->Histogram dari Distribusi Exponensial untuk n = 10000
-![Rplot07](https://user-images.githubusercontent.com/72547769/162623942-7531194e-712a-4c94-a5b4-e7dc87590f74.png)
+>nilai varian dapat dihitung dengan `va`
 
 Nomor 6
+```
+#diketahui mean = 50 dan sd = 8 dari random nilai sebanyak 100 data
+#Fungsi Probabilitas dari Distribusi Normal P
+#sub soal (a)
+n = 100
+m = 50
+std = 8
+
+#contoh data data <- c(1,2,4,2,6,3,10,11,5,3,6,85)
+data <- rnorm(100,50,8)
+rata_rata <- mean(data)
+x1 <- floor(mean(data))
+x2 <- round(mean(data))
+
+z_scores <- (data - mean(data) / sd(data))
+
+plot(z_scores, type = "o", col="red")
+```
+>rumus z score `z = (x-μ)/σ`, di mana `x` adalah skor mentah, `μ` adalah rata-rata populasi, dan `σ` adalah standar deviasi populasi.
 
 >Grafik Z-Score Data
 ![Rplot08](https://user-images.githubusercontent.com/72547769/162623953-bb216f8d-89b4-4e3e-af49-d335b8d9d18d.png)
 
+#sub soal (b)
+```
+#Generate Histogram dari Distribusi Normal dengan breaks 50
+x <- rnorm(100,50,8)
+hist(x,
+     breaks = 50,
+     main = "5025201165_Gabriel Solomon Sitanggang_Probstat_D_DNhistogram")
+```
 >Histogram Distribusi Normal
 ![Rplot09](https://user-images.githubusercontent.com/72547769/162623964-69ee14b0-37e7-4a07-b6df-339866d943ab.png)
+
+#sub soal (c)
+```
+#nilai varian
+var(x)
+```
+>nilai varian dapat dihitung dengan `var(x)`
