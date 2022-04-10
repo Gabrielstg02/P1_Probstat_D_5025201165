@@ -29,8 +29,6 @@ mean(rgeom(n = 10000, prob = p) == 3)
 ```
 #sub soal (d)
 ```
-#pada sub soal (d) kita membuat histogram distibusi geometrik
-#Yaitu histogram Peluang X = 3 gagal Sebelum Sukses Pertama
 library(dplyr)
 library(ggplot2)
 
@@ -49,6 +47,8 @@ data.frame(x = 0:10, prob = dgeom(x = 0:10, prob = p)) %>%
        x = "Gagal Sebelum Sukses Pertama (x)",
        y = "Peluang")
 ```
+> pada sub soal (d) kita membuat histogram distibusi geometrik
+> Yaitu histogram Peluang X = 3 gagal Sebelum Sukses Pertama
 > Histogram Distribusi Geometrik Peluang X Gagal Sebelum Sukses Pertama
 ![Rplot](https://user-images.githubusercontent.com/72547769/162623727-90ae8759-3cde-4091-a8c6-b69921f706ec.png)
 
@@ -57,15 +57,17 @@ data.frame(x = 0:10, prob = dgeom(x = 0:10, prob = p)) %>%
 p=0.2
 
 #Nilai Rataan (mean)
-#didapat dengan cara membagi 1 dengan p (0.2)
 mean1 = 1 / p
 mean1
+```
+>didapat dengan cara membagi 1 dengan p (0.2)
 
+```
 #Nilai Varian
-#didapat dengan cara mengurangkan 1 dengan p (0.2) dan kemudian dibagi dengan pangkat dua dari p ((0.2)^2)
 var1 = (1 - p) / p^2
 var1
 ```
+>didapat dengan cara mengurangkan 1 dengan p (0.2) dan kemudian dibagi dengan pangkat dua dari p ((0.2)^2)
 
 
 
