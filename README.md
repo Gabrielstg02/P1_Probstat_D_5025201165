@@ -189,16 +189,117 @@ lambda
 >`lambda` merupakan varian
 
 Nomor 4
+
+
+#sub soal (a)
+```
+#Fungsi probabilitas dari Distribusi Chi-Square
+#diketahui nilai x = 2
+#nilai v = 10
+x = 2
+df = 10
+dchisq(x , df)
+#didapatkan hasil 0.007664155
+```
+>`x` dan `v` diketahui nilai nya yaitu masing-masing 2 dan 10
+>`dchisq(vec, df)` adalah fungsi untuk menghitung kepadatan chi square suatu vektor elemen.
+
+#sub soal (b)
+```
+#Histogramari dari Distribusi Chi-Square menggunakan 100 data sembarang
+p <- rchisq(100,df)
+
+hist(p,
+     freq = FALSE,
+     xlim = c(0,30),
+     ylim = c(0,0.2),
+     main = "Histogram dari Distribusi Chisquare")
+```
 >Histogram dari Distribusi Chi-Square dengan 100 Data Random
 ![Rplot03](https://user-images.githubusercontent.com/72547769/162623885-eb08101b-38b2-455f-b0aa-49e97e92a977.png)
 
-Nomor 5
+#sub soal (c)
+```
+#Nilai rataan
+mean1 = df
+mean1
+```
+>nilai rataan dapat dihitung dengan `mean1`
+```
+#varian
+var1 = 2*df
+var1
+```
+>nilai varian dapat dihitung dengan `var1`
 
+
+Nomor 5
+```
+#sub soal (a)
+#diketahui nilai lambda = 3
+
+lambda = 3
+#misalkan jika bilangan random sejumlah n=10
+rexp(10,rate = lambda)
+```
+>`lambda` bernilai 3
+>`rexp` adalah fungsi yang digunakan untuk mensimulasikan sekumpulan bilangan acak yang diambil dari distribusi eksponensial.
+
+#sub soal (b)
+```
+#Histogram dari Distribusi Exponensial untuk 10, 100, 1000 dan 10000 bilangan random
+#n = 10
+set.seed(1)
+x1 <- rexp(10,rate = lambda)
+hist(x1,
+     main = "Histogram Eksponensial jika n = 10")
+```
 >Histogram dari Distribusi Exponensial untuk n = 10
 ![Rplot04](https://user-images.githubusercontent.com/72547769/162623901-a85acad4-f179-446c-aff9-26e10098ba6f.png)
-
+```
+#n = 100
+set.seed(1)
+x2 <- rexp(100,rate = lambda)
+hist(x2,
+     ylim = c(0,50),
+     xlim = c(0,2),
+     main = "Histogram Eksponensial jika n = 100")
+```
 >Histogram dari Distribusi Exponensial untuk n = 100
 ![Rplot05](https://user-images.githubusercontent.com/72547769/162623920-f62b450e-a88a-459a-8cb6-1984b861d79b.png)
+```
+#n=1000
+set.seed(1)
+x3 <- rexp(1000,rate = lambda)
+hist(x3,
+     ylim = c(0,500),
+     xlim = c(0,3),
+     main = "Histogram Eksponensial jika n = 1000")
+     
+#n=10000
+set.seed(1)
+x4 <- rexp(10000,rate = lambda)
+hist(x4,
+     ylim = c(0,5000),
+     xlim = c(0,4),
+     main = "Histogram Eksponensial jika n = 10000")
+
+#sub soal (c)
+#Nilai rataan
+#dimana n =100 dan lambda = 3
+n = 100
+lamd = 3
+data <- rexp(n, rate = lamd)
+avg <- mean(data)
+avg
+
+#nilai varian
+va <- var(data)
+va
+```
+
+
+
 
 >Histogram dari Distribusi Exponensial untuk n = 1000
 ![Rplot06](https://user-images.githubusercontent.com/72547769/162623936-acffca05-cdbf-4ce4-beab-069398b36071.png)
